@@ -2,7 +2,7 @@ import { ThemeProvider } from "@/provider/theme-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, DM_Sans} from "next/font/google";
 import "./globals.css";
-
+import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs"; 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,19 +29,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+  <ClerkProvider 
+    publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+  >
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${dmSans.variable} antialiased overflow-x-hidden`}
       >
+        
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          
           {children}
         </ThemeProvider>
+       
       </body>
     </html>
-  );
+   </ClerkProvider>
+   );
 }
