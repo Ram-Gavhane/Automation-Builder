@@ -2,6 +2,8 @@
 import React, { useEffect, useRef } from 'react'
 import * as LR from '@uploadcare/blocks'
 import { useRouter } from 'next/navigation'
+import "@uploadcare/blocks/web/lr-file-uploader-regular.min.css";
+
 
 // Type declarations for Uploadcare custom elements
 declare global {
@@ -41,13 +43,12 @@ const UploadCareButton = ({ onUpload }: Props) => {
       {/* @ts-ignore */}
       <lr-config
         ctx-name="my-uploader"
-        pubkey="a9428ff5ff90ae7a64eb"
+        pubkey="2858f585c443ee451e5f"
       />
 
       {/* @ts-ignore */}
       <lr-file-uploader-regular
         ctx-name="my-uploader"
-        css-src={`https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.35.2/web/lr-file-uploader-regular.min.css`}
       />
 
       {/* @ts-ignore */}
