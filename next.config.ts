@@ -5,10 +5,12 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**',
-        port: '',
-        pathname: '/**',
+        hostname: 'img.clerk.com',
       },
+      {
+        protocol:'https',
+        hostname:'24b3j2r0ce.ucarecd.net'
+      }
     ],
   },
 };

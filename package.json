@@ -20,6 +20,7 @@
     "@tsparticles/engine": "^3.9.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.9.1",
+    "@uploadcare/file-uploader": "1.21.0",
     "@uploadcare/react-uploader": "^1.10.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
