@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, DM_Sans} from "next/font/google";
 import "./globals.css";
 import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs"; 
+import ModalProvider from "@/provider/modal-provider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -43,10 +44,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          
-          {children}
+        <ModalProvider>{children}</ModalProvider>
         </ThemeProvider>
-       
       </body>
     </html>
    </ClerkProvider>
